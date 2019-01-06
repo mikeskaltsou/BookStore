@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="pubsModel.pub_info" Width="1.5" PointX="7.625" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="pubsModel.publisher" Width="1.5" PointX="7.625" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="pubsModel.sale" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="pubsModel.store" Width="1.5" PointX="7.625" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pubsModel.store" Width="1.5" PointX="7.875" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="pubsModel.titleauthor" Width="1.5" PointX="7.625" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="pubsModel.title" Width="1.5" PointX="10.5" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="pubsModel.discount" Width="1.5" PointX="5.125" PointY="6" IsExpanded="true" />

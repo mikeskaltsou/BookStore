@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BookStore.Models.titleauthor>
+
+@{
+    ViewBag.Title = "TopSales";
+}
+
+<h2>TopSales</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Last Name")
+        </th>
+        <th>
+            @Html.DisplayName("First Name")
+        </th>
+        <th>
+            @Html.DisplayName("Phone")
+        </th>
+        <th>
+            @Html.DisplayName("Adress")
+        </th>
+        <th>
+            @Html.DisplayName("City")
+        </th>
+        <th>
+            @Html.DisplayName("Sales")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.author.au_lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.author.au_fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.author.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.author.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.author.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title.ytd_sales)
+            </td>
+        </tr>
+    }
+
+</table>
