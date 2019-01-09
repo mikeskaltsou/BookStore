@@ -8,8 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using BookStore.Models;
 
+
 namespace BookStore.Controllers
 {
+
+
     public class HomeController : Controller
     {
 
@@ -35,7 +38,13 @@ namespace BookStore.Controllers
                 ViewData["SecondDate"] = collection[3];
 
                 number = int.Parse(collection[1]);
+                first = DateTime.Parse(collection[2]);
+                second = DateTime.Parse(collection[3]);
+
                 TempData["number"] = number; // Για μεταφορά του number από τον ένα Action στο άλλο!
+                TempData["first"] = first;
+                TempData["second"] = second;
+
 
                 return RedirectToAction("TopSales"); // Sends data to TopSales Action
             }
@@ -50,15 +59,21 @@ namespace BookStore.Controllers
 
         private pubsEntities db = new pubsEntities();
         //GET: Home/TopSales
-        public ActionResult TopSales(string button)
+        public ActionResult TopSales()
         {
 
             int num = Convert.ToInt32(TempData["number"]);
+            DateTime first = Convert.ToDateTime(TempData["first"]);
+            DateTime second = Convert.ToDateTime(TempData["second"]);
+
+
             //SQL
             if (num != 0)
             {
                 var topsales = (from ta in db.titleauthors
                                 join t in db.titles on ta.title_id equals t.title_id
+                                join s in db.sales on t.title_id equals s.title_id
+                                where s.ord_date > first  && s.ord_date < second
                                 orderby t.ytd_sales descending
                                 select ta).Take(num);
 
